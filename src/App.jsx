@@ -11,7 +11,7 @@ function App() {
       <Navbar />
 
       <main className="container">
-        <BsFillChatSquareTextFill className='text-white'/>
+        <BsFillChatSquareTextFill className='text-white mx-auto w-100'/>
         <h2 className="text-white text-center">Tópicos mais comentados do momento</h2>
         <SearchTrends />
         <Trends />
