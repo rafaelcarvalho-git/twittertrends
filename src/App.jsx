@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Trends from './components/Trends/Trends';
-import {BsFillChatSquareTextFill} from 'react-icons/bs'
-import SearchTrends from './components/SearchTrends/SearchTrends';
+import React, {Component} from 'react';
+import api from './api';
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
+class App extends Component{
 
-      <main className="container">
-        <BsFillChatSquareTextFill className='text-white mx-auto w-100'/>
-        <h2 className="text-white text-center">Tópicos mais comentados do momento</h2>
-        <SearchTrends />
-        <Trends />
-      </main>
-    </div>
-  );
-}
+  state = {
+    nomes: [],
+  }
+
+  async componentDidMount(){
+    const response = await api.get('')
+
+console.log(response.data);
+
+    this.setState({nomes: response.data});
+  }
+
+  render(){
+
+    const {nomes} = this.state;
+
+    return(
+      <div>
+        <h1>teste</h1>
+        {nomes.map(nomes=>(
+          <li key={nomes.name}>
+            <h2>{nomes.name}</h2>
+          </li>
+        ))}
+      </div>
+    );
+  };
+};
 
 export default App;

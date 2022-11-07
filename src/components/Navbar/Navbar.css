@@ -1,0 +1,6 @@
+.logo-twitter {
+    width: 42px;
+}
+.nav-link:hover, .navbar-brand:hover {
+    color: #1da1f2 !important;
+}
