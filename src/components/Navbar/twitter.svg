@@ -1,4 +1,4 @@
-<svg aria-label="Twitter Logo" class="u01-dtc-react__twitter-logo-icon twtr-icon" focusable="false" height="24"
+<svg aria-label="Twitter Logo" className="u01-dtc-react__twitter-logo-icon twtr-icon" focusable="false" height="24"
   viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
   <path d="M0 0h24v24H0z" opacity="0"></path>
   <path

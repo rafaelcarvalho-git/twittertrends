@@ -4,11 +4,9 @@ import SearchCountry from './SearchCountry';
 
 function SearchTrends({setSearch,setWoeid}) {
     return (
-        <section className="search mx-auto mb-4">   
-            <div className="search-trends d-flex align-items-center">
-                <SearchBar setSearch={setSearch} />
-                <SearchCountry setWoeid={setWoeid} />
-            </div>
+        <section className="search-trends d-flex mx-auto my-4">             
+            <SearchBar setSearch={setSearch} />
+            <SearchCountry setWoeid={setWoeid} />          
         </section>
     );
 }

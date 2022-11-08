@@ -1,17 +1,21 @@
+import './SearchCountry.css'
+
 function SearchCountry({setWoeid}) {
-    return (
-        <div className='menu d-flex bg-danger w-50'>
-            <select className="form-control" name='trending-place' onChange={e => setWoeid(e.target.value)}>
+    return (    
+        <div className="search-country mx-auto mb-3">            
+            <select className="form-control mx-auto" onChange={e => setWoeid(e.target.value)}>
                 <option value='1'>Mundo</option>
+                <option value='23424768'>Brasil</option>
+                <option value='23424977'>EUA</option>
+                <option value='23424747'>Argentina</option>
+                <option value='23424775'>Canada</option>
+                <option value='23424782'>Chile</option>
+                <option value='23424936'>Russia</option>
+                <option value='23424856'>Japão</option>
                 <option value='23424848'>India</option>
-                <option value='2459115'>New York,US</option>
-                <option value='2442047'>Los Angeles,US</option>
-                <option value='2295411'>Mumbai</option>
-                <option value='1105779'>Sydney,AU</option>
-            </select>
-            <div className='location' /*onClick={handleLocation}*/>
-            X
-            </div>
+                <option value='23424919'>Peru</option>
+                <option value='23424748'>Austrália</option>              
+            </select>      
         </div>
     );
 }

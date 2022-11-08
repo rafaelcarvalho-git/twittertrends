@@ -1,0 +1,11 @@
+.search-country {
+    width: 50%;
+}
+.search-country select {
+    width: 90%;
+}
+@media(max-width:550px) {
+    .search-country {
+        width: 90%;
+    }
+}

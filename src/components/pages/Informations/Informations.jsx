@@ -2,7 +2,7 @@ import './Informations.css'
 
 function Informations() {
     return (
-        <section>
+        <section className="informations">
             <div className="card text-center mx-auto my-auto shadow">
               <div className="card-header text-white">
                 Projeto Twitter Trends para disciplina Projeto de Sistemas Web I

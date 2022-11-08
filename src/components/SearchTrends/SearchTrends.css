@@ -1,7 +1,7 @@
-.search {
-    max-width: 480px;
+.search-trends {
+    max-width: 640px;
 }
-@media(max-width:450px) {
+@media(max-width:550px) {
     .search-trends {
         flex-direction: column;
     }
