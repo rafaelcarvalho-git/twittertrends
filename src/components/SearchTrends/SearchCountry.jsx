@@ -1,7 +1,7 @@
-function SearchCountry() {
+function SearchCountry({setWoeid}) {
     return (
         <div className='menu d-flex bg-danger w-50'>
-            <select className="form-control" name='trending-place' /*onChange={e => setWoeid(e.target.value)}*/>
+            <select className="form-control" name='trending-place' onChange={e => setWoeid(e.target.value)}>
                 <option value='1'>Mundo</option>
                 <option value='23424848'>India</option>
                 <option value='2459115'>New York,US</option>

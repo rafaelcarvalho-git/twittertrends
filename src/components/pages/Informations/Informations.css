@@ -1,0 +1,14 @@
+section {
+  margin-top: 150px;
+}
+.card {
+  max-width: 800px;
+  background-color: #27a6f593;
+}
+.card a {
+  text-decoration: none;
+  color: #043f63;
+}
+.card a:hover {
+  color: #527c96;
+}

@@ -1,35 +1,38 @@
-import React, {Component} from 'react';
-import api from './api';
+import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import ListTrends from './components/pages/Trends/ListTrends';
+import React, {useState, useEffect} from 'react'
+import Informations from './components/pages/Informations/Informations';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-class App extends Component{
+function App() {
 
-  state = {
-    nomes: [],
-  }
+  var [fetchedData, updateFetchedData] = useState([]);
+  const [woeid, setWoeid] = useState('1')
+  var api = 'https://esportes-and-trends.herokuapp.com/trends/' + woeid; //guarda o link da api e recebe a variavel da pagina selecionada
+ 
 
-  async componentDidMount(){
-    const response = await api.get('')
+  useEffect(()=>{ //espera o carregamento e carrega os dados da api, quando o pageNumber muda a api é carregada novamente
+    (async function(){
+        var data = await fetch(api).then(response=>response.json())
+        updateFetchedData(data.trends);
+        //console.log(data.trends)
+    })()
+  },[api])
 
-console.log(response.data);
+  //console.log(fetchedData);
 
-    this.setState({nomes: response.data});
-  }
-
-  render(){
-
-    const {nomes} = this.state;
-
-    return(
-      <div>
-        <h1>teste</h1>
-        {nomes.map(nomes=>(
-          <li key={nomes.name}>
-            <h2>{nomes.name}</h2>
-          </li>
-        ))}
-      </div>
-    );
-  };
-};
+  return (
+    <Router className="App">
+      <Navbar />
+      <main className="container">        
+        <Routes>
+          <Route exact path='/' element={<ListTrends fetchedData={fetchedData} setWoeid={setWoeid} />} />       
+          <Route path='/informations' element={<Informations />} /> 
+        </Routes>               
+      </main>
+    </Router>
+  );
+}
 
 export default App;

@@ -2,12 +2,12 @@ import './SearchTrends.css'
 import SearchBar from './SearchBar';
 import SearchCountry from './SearchCountry';
 
-function SearchTrends() {
+function SearchTrends({setSearch,setWoeid}) {
     return (
         <section className="search mx-auto mb-4">   
             <div className="search-trends d-flex align-items-center">
-                <SearchBar />
-                <SearchCountry />
+                <SearchBar setSearch={setSearch} />
+                <SearchCountry setWoeid={setWoeid} />
             </div>
         </section>
     );

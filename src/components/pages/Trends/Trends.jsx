@@ -1,118 +1,48 @@
 import './Trends.css';
-import SearchTrends from '../../../components/SearchTrends/SearchTrends';
+import React, {useState, useEffect} from 'react'
 
-
-function Trends() {
-
-
-
-    return (
-        <section className="trends">
-            <div className="title-section mx-auto text-center my-5 rounded border border-dark">
-                <i class="bi bi-chat-left-text"></i>            
-                <h2 className="">TRENDS MAIS COMENTADAS DO MOMENTO</h2>
-            </div>
-
-
-<SearchTrends />
+function Trends({fetchedData,search}) {
        
-        <ul id="aa" class="d-flex flex-wrap">
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
-            <li className='mx-auto'>
-                <a href="https://www.google.com.br/" class="trend btn my-3 shadow">
-                Trend <span class="badge rounded-pill text-white">91542</span>
-                </a>
-            </li>
+ 
 
-        </ul>
-
-        </section>
+    var display;
     
-    )
-}
+    var pesquisa = search;
+    console.log(pesquisa);
+    if (fetchedData) {
+      display = fetchedData.map((informations) => {
+        //if (informations.name == pesquisa) {}
+
+    for(var i=0; i<fetchedData.length; i++) {
+        if(fetchedData[i].name === pesquisa) {
+            console.log(fetchedData[i].name);
+            if(informations.name === pesquisa) {
+
+           
+            return (
+                <li key={informations.name} className='mx-3'>
+                    <a href={informations.url} target="_blank" className="trend btn my-3 shadow">
+                    {informations.name} <span className="badge rounded-pill text-white">{informations.tweet_volume}</span>
+                    </a>
+                </li>          
+              );
+            }
+        }else if (pesquisa === '') {
+            return (
+                <li key={informations.name} className='mx-3'>
+                    <a href={informations.url} target="_blank" className="trend btn my-3 shadow">
+                    {informations.name} <span className="badge rounded-pill text-white">{informations.tweet_volume}</span>
+                    </a>
+                </li>          
+              );
+        }
+    }
+
+    });
+  } else {
+    display = 'nao';
+  }
+  return <>{display}</>;
+};
 
 export default Trends;
