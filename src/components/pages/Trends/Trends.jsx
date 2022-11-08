@@ -1,46 +1,32 @@
 import './Trends.css';
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import NotFound from '../../NotFound/NotFound';
 
-function Trends({fetchedData,search}) {
-       
- 
-
+function Trends({fetchedData,search,setSearch}) {        
     var display;
-    
-    var pesquisa = search;
-    console.log(pesquisa);
     if (fetchedData) {
       display = fetchedData.map((informations) => {
-        //if (informations.name == pesquisa) {}
-
-    for(var i=0; i<fetchedData.length; i++) {
-        if(fetchedData[i].name === pesquisa) {
-            console.log(fetchedData[i].name);
-            if(informations.name === pesquisa) {
-
-           
+        if(informations.name.toLowerCase().startsWith(search.toLowerCase()) === true) {                           
             return (
-                <li key={informations.name} className='mx-3'>
+                <li key={informations.name} className='mx-auto'>
                     <a href={informations.url} target="_blank" className="trend btn my-3 shadow">
                     {informations.name} <span className="badge rounded-pill text-white">{informations.tweet_volume}</span>
                     </a>
                 </li>          
               );
-            }
-        }else if (pesquisa === '') {
+        
+        }else if (search === '') {
             return (
-                <li key={informations.name} className='mx-3'>
+                <li key={informations.name} className='mx-auto'>
                     <a href={informations.url} target="_blank" className="trend btn my-3 shadow">
                     {informations.name} <span className="badge rounded-pill text-white">{informations.tweet_volume}</span>
                     </a>
                 </li>          
               );
-        }
-    }
-
+        } 
     });
   } else {
-    display = 'nao';
+    display = NotFound(); //Dados não carregados
   }
   return <>{display}</>;
 };
