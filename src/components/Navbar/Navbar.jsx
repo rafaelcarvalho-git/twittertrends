@@ -1,5 +1,5 @@
 import './Navbar.css'
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
 import twitter from './twitter.svg'
 
 function Navbar() {

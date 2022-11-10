@@ -1,6 +1,6 @@
 import './SearchTrends.css'
-import SearchBar from './SearchBar';
-import SearchCountry from './SearchCountry';
+import SearchBar from './SearchBar'
+import SearchCountry from './SearchCountry'
 
 function SearchTrends({setSearch,setWoeid}) {
     return (

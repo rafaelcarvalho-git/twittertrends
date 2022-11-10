@@ -25,9 +25,15 @@ ul {
 }
 .title-section {
   max-width: 750px;
+  color: rgb(70, 70, 70);
 }
 .title-section i {
-  font-size: 65px;
+  font-size: 65px;  
+  color: #1da1f2
+}
+.bg-t-white {
+  border-radius: 15px;
+  background-color: #7dcafa !important;
 }
 .badge {
   background-color: #1da1f2;  

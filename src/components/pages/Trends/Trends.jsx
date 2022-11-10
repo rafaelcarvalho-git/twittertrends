@@ -1,7 +1,6 @@
-import './Trends.css';
-import Loading from '../../Loading/Loading';
+import './Trends.css'
 
-function Trends({fetchedData,search,setSearch}) {        
+function Trends({fetchedData,search}) {        
     var display;
     if (fetchedData) {
       display = fetchedData.map((informations) => {
@@ -12,12 +11,9 @@ function Trends({fetchedData,search,setSearch}) {
                     {informations.name} <span className="badge rounded-pill text-white">{informations.tweet_volume}</span>
                     </a>
                 </li>          
-              );
-        
+              );        
           }
       });
-    } else {
-      display = Loading(); //Dados não carregados
     }
     return <>{display}</>;
 };

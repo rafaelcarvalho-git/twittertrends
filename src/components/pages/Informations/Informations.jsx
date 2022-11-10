@@ -10,10 +10,11 @@ function Informations() {
               <div className="card-body">
               <p className="card-text">Projeto focado em desenvolver uma aplicação React utilizando uma API para buscar os tópicos mais comentados do momento no Twitter.</p>
                 <h5 className="card-title mb-3">Desenvolvido por:</h5>
-                <a href="https://github.com/rafaelcarvalho-git" target="_blank"><h6>Rafael Carvalho</h6></a>
-                <a href="https://github.com/TheSamuelVitor" target="_blank"><h6>Samuel Vitor</h6></a>
+                <a href="https://github.com/rafaelcarvalho-git" target="_blank" rel="noreferrer"><h6>Rafael Carvalho</h6></a>
+                <a href="https://github.com/TheSamuelVitor" target="_blank" rel="noreferrer"><h6>Samuel Vitor</h6></a>
+                <a href="" target="_blank" rel="noreferrer"><h6>Michele Araujo</h6></a>
                 <h6 className="mb-3 mt-4">Repositório no Github</h6>
-                <a href="https://github.com/rafaelcarvalho-git/twittertrends" target="_blank">github.com/rafaelcarvalho-git/twittertrends</a>
+                <a href="https://github.com/rafaelcarvalho-git/twittertrends" target="_blank" rel="noreferrer">github.com/rafaelcarvalho-git/twittertrends</a>
               </div>
               <div className="card-footer text-white">
                 IFCE - Crato
